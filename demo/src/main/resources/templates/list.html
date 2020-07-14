@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>demo</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <h1 th:text="${title}"></h1>
+        <table>
+        <tr>
+        <th>ID</th>
+        <th>名字</th>
+        <th>名前</th>
+        <th>パスワード</th>
+        </tr>
+            <tr th:each="emp : ${list}" th:object="${emp}">
+                <td th:text="*{userId}"></td>
+                <td th:text="*{familyName}"></td>
+                <td th:text="*{firstName}"></td>
+                <td th:text="*{password}"></td>
+            </tr>
+        </table>
+        <form method="get" action="/demo/index">
+		<input type="submit" value="戻る" />
+	</form>
+    </body>
+</html>
