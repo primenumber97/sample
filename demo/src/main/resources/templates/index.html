@@ -1,8 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout::layout(~{::title},~{::style}, ~{::body/content()})}">
 <head>
 <meta charset="UTF-8"></meta>
 <title>demo</title>
+<style type="text/css">
+BODY {
+	background-color: #ff00ff;
+	margin: 0px;
+}
+
+INPUT {
+	color: #500050
+}
+</style>
 </head>
 <body>
 	<form method="get" action="/demo/success">
@@ -16,5 +26,10 @@
 	<form method="get" action="/demo/list">
 		<input type="submit" value="ユーザー一覧" />
 	</form>
+	<p>
+	<form method="get" action="/demo/prime">
+		<input type="submit" value="ツール" />
+	</form>
+
 </body>
 </html>
