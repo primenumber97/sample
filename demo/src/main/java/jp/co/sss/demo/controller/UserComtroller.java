@@ -38,4 +38,19 @@ public class UserComtroller {
 		model.addAttribute("userTable",repository.getOne(userId));
 		return "/list";
 	}
+
+	@RequestMapping(path="/update_input",method = RequestMethod.GET)
+	public String updateInput() {
+		return "update_input";
+	}
+	@RequestMapping(path="/update/complete",method=RequestMethod.POST)
+	public String updateComplete(DemoForm form) {
+		UserTable user=new UserTable();
+		user.setUserId(form.getUserId());
+		user.setFamilyName(form.getFamilyName());
+		user.setFirstName(form.getFirstName());
+		user.setPassword(form.getPassword());
+		repository.save(user);
+		return "redirect:/getOne/"+user.getUserId();
+	}
 }
