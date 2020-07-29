@@ -29,13 +29,18 @@ public class UserComtroller {
 		user.setFamilyName(form.getFamilyName());
 		user.setFirstName(form.getFirstName());
 		user.setPassword(form.getPassword());
+		System.out.println("UserId:"+user.getUserId());
+		System.out.println("FamilyName:"+user.getFamilyName());
+		System.out.println("FirstName:"+user.getFirstName());
+		System.out.println("Password:"+user.getPassword());
 		repository.save(user);
-		return "redirect:/getOne/"+user.getUserId();
+		System.out.println("userId:★"+user.getId());
+		return "redirect:/getOne/"+user.getId();
 	}
 
 	@RequestMapping("/getOne/{id}")
-	public String showUser(@PathVariable String userId,Model model) {
-		model.addAttribute("userTable",repository.getOne(userId));
+	public String showUser(@PathVariable Integer id,Model model) {
+		model.addAttribute("userTable",repository.getOne(id));
 		return "/list";
 	}
 

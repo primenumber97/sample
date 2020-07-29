@@ -10,8 +10,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "USER_TABLE")
 public class UserTable {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private Integer id;
+
     @Column(name = "USER_ID")
     private String userId;
 
@@ -23,6 +27,15 @@ public class UserTable {
 
     @Column(name = "PASSWORD")
     private String password;
+
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getUserId() {
 		return userId;
