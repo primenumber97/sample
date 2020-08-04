@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>demo</title>
+</head>
+<body>
+	<div>ユーザーページ</div>
+	<form method="post" action="">
+		<p>
+			月:<select name="ge">
+				<option value="いる">〇</option>
+				<option value="いない">-</option>
+			</select>
+			火:<select name="ka">
+				<option value="いる">〇</option>
+				<option value="いない">-</option>
+			</select>
+			水:<select name="su">
+				<option value="いる">〇</option>
+				<option value="いない">-</option>
+			</select>
+			木:<select name="mo">
+				<option value="いる">〇</option>
+				<option value="いない">-</option>
+			</select>
+			金:<select name="ki">
+				<option value="いる">〇</option>
+				<option value="いない">-</option>
+			</select>
+			土:<select name="do">
+				<option value="いる">〇</option>
+				<option value="いない">-</option>
+			</select>
+			日:<select name="ni">
+				<option value="いる">〇</option>
+				<option value="いない">-</option>
+			</select>
+		</p>
+		<input type="submit" value="更新する">
+	</form>
+	<table>
+		<tr>
+			<th>名前</th>
+			<th>月</th>
+			<th>火</th>
+			<th>水</th>
+			<th>木</th>
+			<th>金</th>
+			<th>土</th>
+			<th>日</th>
+		</tr>
+		<tr th:each="emp : ${list}" th:object="${emp}">
+			<td th:text="*{userName}"></td>
+			<td th:text="*{}"></td>
+			<td th:text="*{}"></td>
+			<td th:text="*{}"></td>
+			<td th:text="*{}"></td>
+			<td th:text="*{}"></td>
+			<td th:text="*{}"></td>
+			<td th:text="*{}"></td>
+		</tr>
+	</table>
+	<form method="get" action="/demo/create_input">
+		<input type="submit" value="ユーザー登録" />
+	</form>
+	<form method="get" action="/demo/update_input">
+		<input type="submit" value="ユーザー情報更新" />
+	</form>
+	<form role="form" id="logout" th:action="@{/logout}" method="post">
+		<button type="submit">ログアウト</button>
+	</form>
+</body>
+</html>

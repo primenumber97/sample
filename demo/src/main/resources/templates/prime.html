@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>tool</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Form</h1>
+	<form action="#" th:action="@{/result}" th:object="${form}"
+		method="post">
+		longだから-9,223,372,036,854,775,808～9,223,372,036,854,775,807まで
+		<p>
+			number: <input type="number" th:field="*{num}" />
+		</p>
+		<p>
+			<input type="submit" value="判定" />
+		</p>
+	</form>
+	<form method="get" action="/demo/index">
+		<input type="submit" value="戻る" />
+	</form>
+	<p>参考値
+	<p>97
+	<p>997
+	<p>2147483647
+	<p>99999999999999997
+	<p>999999999999999989
+	<p>9223372036854775783
+	<p>7223372036854775801
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>ユーザー一覧ページ</title>
+</head>
+<body>
+	<div>ユーザー一覧ページ</div>
+	<a class="btn btn-default" href="/players/new">ユーザーの追加</a>
+	<a class="btn btn-default" href="/players/new">戻る</a>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>名前</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="user:${users}">
+				<td th:text="*{userName}"></td>
+				<td>
+					<form th:action="@{/players/{id}(id=*{id})}" th:method="delete"
+						th:href="@{/players/{id}(id=*{id})}">
+						<input class="btn btn-default btn-xs" type="submit" value="変更" />
+					</form>
+				</td>
+				<td>
+					<form th:action="@{/players/{id}(id=*{id})}" th:method="delete">
+						<input class="btn btn-default btn-xs" type="submit" value="削除" />
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</body>
+</html>

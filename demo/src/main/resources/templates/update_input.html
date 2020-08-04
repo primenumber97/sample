@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+</head>
+<body>
+	<div>ユーザー情報変更</div>
+	<form method="post" th:action="@{/update/complete}">
+		ユーザーID:<input type="text" name="userId" />
+		<p>
+		　名　字　:<input type="text" name="familyName" />
+		<p>
+		　名　前　:<input type="text" name="firstName" />
+		<p>
+		パスワード:<input type="text" name="password" />
+		<p>
+		<input type="submit" value="　　変　更　　" />
+	</form>
+	<form method="get" action="/demo/success">
+		<input type="submit" value="　　戻　る　　" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+div#header{
+	background-color:#c0c0c0;
+	height:110px;
+}
+div#container{
+}
+div#sidebar{
+	background-color:#808080;
+	float:left;
+	height:700px;
+	width:250px;
+}
+div#main{
+	float:left;
+	height:750px;
+}
+div#footer{
+	background-color:#c0c0c0;
+	clear:left;
+	height:100px;
+}
